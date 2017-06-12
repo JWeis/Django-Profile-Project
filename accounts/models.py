@@ -7,7 +7,7 @@ class Profile(User, models.Model):
     username_validator = ASCIIUsernameValidator()
     date_of_birth = models.DateField()
     bio = models.TextField()
-    avatar = models.ImageField(blank=True, upload_to='static/extra_credit_image_editor')
+    avatar = models.ImageField(blank=True, upload_to='assets/images')
 
     class Meta:
         pass

@@ -22,6 +22,7 @@ class CreationForm(UserCreationForm):
 class UpdateUserForm(UserChangeForm):
     password = ReadOnlyPasswordHashField(label="Password",
                                          help_text="<a href=\"password/\">Update Password</a>")
+
     class Meta:
         model = models.Profile
         fields = [

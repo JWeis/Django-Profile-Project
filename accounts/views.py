@@ -9,6 +9,7 @@ from django.shortcuts import render
 from PIL import Image
 from . import forms
 from . import models
+from . import images
 
 
 def sign_in(request):
@@ -65,7 +66,9 @@ def sign_out(request):
 def profile_view(request):
     pk = request.user.pk
     profile = get_object_or_404(models.Profile, pk=pk)
-    return render(request, 'accounts/profile_view.html', {'profile':profile})
+    image_file = images.image_filename(pk)
+    return render(request, 'accounts/profile_view.html',
+                  {'profile':profile, 'image':image_file})
 
 
 @login_required
