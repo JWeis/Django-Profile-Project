@@ -1,0 +1,10 @@
+{% extends "layout.html" %}
+{% load staticfiles %}
+
+{% block title %}{{profile.first_name}} | {{ super }}{% endblock %}
+
+{% block body %}
+{{profile.first_name}} {{profile.last_name}}
+{{profile.email}}
+<img src="{% static extra_credit_image_editor%}{{profile.avatar}}" alt="">
+{% endblock %}
